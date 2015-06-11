@@ -59,7 +59,7 @@ endif
 
 ifeq ($(BR2_PACKAGE_LIBXML2),y)
 POSTGRESQL_DEPENDENCIES += libxml2
-POSTGRESQL_CONF_OPTS += --with-xml
+POSTGRESQL_CONF_OPTS += --with-libxml
 endif
 
 ifeq ($(BR2_PACKAGE_LIBXSLT),y)
