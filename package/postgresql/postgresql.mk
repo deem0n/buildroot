@@ -57,6 +57,17 @@ POSTGRESQL_DEPENDENCIES += openssl
 POSTGRESQL_CONF_OPTS += --with-openssl
 endif
 
+ifeq ($(BR2_PACKAGE_LIBXML2),y)
+POSTGRESQL_DEPENDENCIES += libxml2
+POSTGRESQL_CONF_OPTS += --with-xml
+endif
+
+ifeq ($(BR2_PACKAGE_LIBXSLT),y)
+POSTGRESQL_DEPENDENCIES += libxslt
+POSTGRESQL_CONF_OPTS += --with-libxslt
+endif
+
+
 define POSTGRESQL_USERS
 	postgres -1 postgres -1 * /var/lib/pgsql /bin/sh - PostgreSQL Server
 endef
